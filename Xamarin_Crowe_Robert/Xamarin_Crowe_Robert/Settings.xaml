@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Crowe_Robert.Settings"
+             Title="S e t t i n g s"
+             BackgroundColor="{StaticResource PageBackgroundColor}">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            
+            <StackLayout BackgroundColor="#4472c4" >
+                <Label Text="NOTIFICATIONS:" TextDecorations="Underline" TextColor="White" Margin="10,0,0,10"/>
+                <Label x:Name="cStartLabel" Text="Course Start Alerts: ENABLED" TextColor="White" Margin="30,0,0,10"/>
+                <Label x:Name="cEndLabel" Text="Course End Alerts: ENABLED" TextColor="White" Margin="30,0,0,10"/>
+                <Label x:Name="assessmentLabel" Text="Assessment Start Alerts: ENABLED" TextColor="White" Margin="30,0,0,10"/>
+                <Label x:Name="assessmentEndLabel" Text="Assessment End Alerts: ENABLED" TextColor="White" Margin="30,0,0,10"/>
+            </StackLayout>
+            
+            <Button Style="{StaticResource DarkButtonStyle}" x:Name="toggleCa" Text="TOGGLE COURSE START ALERTS" Clicked="ToggleCa_Clicked"></Button>
+            <Button Style="{StaticResource DarkButtonStyle}" x:Name="toggleCend" Text="TOGGLE COURSE END ALERTS" Clicked="ToggleCend_Clicked"></Button>
+            <Button Style="{StaticResource DarkButtonStyle}" x:Name="toggleAa" Text="TOGGLE ASSESSMENT START ALERTS" Clicked="ToggleAa_Clicked"></Button>
+            <Button Style="{StaticResource DarkButtonStyle}" x:Name="toggleAssessmentEnd" Text="TOGGLE ASSESSMENT END ALERTS" Clicked="ToggleAssessmentEnd_Clicked"/>
+            <Button Style="{StaticResource DarkButtonStyle}" x:Name="saveNotify" Text="SAVE SETTINGS" Clicked="SaveNotify_Clicked"></Button>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

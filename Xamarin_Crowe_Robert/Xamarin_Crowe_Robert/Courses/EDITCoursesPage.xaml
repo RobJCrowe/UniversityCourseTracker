@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Crowe_Robert.Courses.EDITCoursesPage"
+             Title="Edit Course" BackgroundColor="{StaticResource PageBackgroundColor}">
+    
+    
+    
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Always" Margin="0,0,0,20" >
+        <StackLayout>
+            <!--COURSE NAME-->
+            <StackLayout Margin="10,10,10,0">
+                <StackLayout BackgroundColor="{StaticResource MediumButtonColor}">
+            <Entry Text="{Binding CourseName, Mode=TwoWay}" TextColor="{StaticResource textWhite}" Placeholder="Course Name" HorizontalOptions="Fill" />
+                </StackLayout>
+
+                <!--START DATE-->
+                <StackLayout BackgroundColor="{StaticResource MediumButtonColor}" Margin="0,5,0,5">
+                
+                <Label x:Name="startCourseDatePicker" Text="Course Start:" TextColor="{StaticResource textWhite}"/>
+                        <DatePicker x:Name="startCDP" TextColor="{StaticResource textWhite}" VerticalOptions="CenterAndExpand" Date="{Binding CourseStart, Mode=TwoWay}" MinimumDate="{Binding CourseMinimum}" MaximumDate="{Binding CourseMaximum}" >
+                    <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                    <!--{x:Static sys:DateTime.Now}-->
+                </DatePicker>
+            </StackLayout>
+
+                <!--END DATE-->
+                <StackLayout BackgroundColor="{StaticResource MediumButtonColor}" Margin="0,5,0,5">
+                    <Label x:Name="endCourseDatePicker" Text=" Course End:" TextColor="{StaticResource textWhite}" />
+                        <DatePicker x:Name="endCDP" TextColor="{StaticResource textWhite}" VerticalOptions="CenterAndExpand" Date="{Binding CourseEnd, Mode=TwoWay}" MinimumDate="{Binding CourseMinimum}" MaximumDate="{Binding CourseMaximum}" >
+                        <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                    </DatePicker>
+                </StackLayout>
+
+                <!--COURSE STATUS PICKER-->
+                <StackLayout BackgroundColor="{StaticResource MediumButtonColor}">
+                    <Picker x:Name="courseStatusPicker" BackgroundColor="{StaticResource MediumButtonColor}" Title="Course Status:" SelectedItem="{Binding CourseStatus, Mode=TwoWay}" TextColor="{StaticResource textWhite}" >
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>IN PROGRESS</x:String>
+                            <x:String>COMPLETED</x:String>
+                            <x:String>DROPPED</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                    </Picker>
+                </StackLayout>
+
+                    <!--TEACHER PICKER-->
+                    <StackLayout BackgroundColor="{StaticResource MediumButtonColor}">
+                        <Picker x:Name="teacherPicker" BackgroundColor="{StaticResource MediumButtonColor}" Title="Teacher:" ItemsSource="{Binding CiList, Mode=TwoWay}" ItemDisplayBinding="{Binding ciName, Mode=TwoWay}" SelectedItem="{Binding SelectedTeacher, Mode=TwoWay}" SelectedIndex="{Binding SINDEX, Mode=TwoWay}" TextColor="{StaticResource textWhite}" >
+                        </Picker>
+                    </StackLayout>
+
+                    <!--OPTIONAL NOTES-->
+                <StackLayout BackgroundColor="{StaticResource MediumButtonColor}">
+                    <Editor Placeholder="Optional Notes" HeightRequest="200" TextColor="{StaticResource textWhite}" Text="{Binding OptionalNotes, Mode=TwoWay}"/>
+                    </StackLayout>  
+                
+              <!--OBJECTIVE ASSESSMENT-->
+                <Button Style="{StaticResource DarkButtonStyle}" x:Name="AddOa" Text="Add Objective Assessment" FontSize="Micro" Clicked="AddOa_Clicked"/>
+                <Button Style="{StaticResource DarkButtonStyle}" x:Name="EditOa" Text="Edit Objective Assessment" FontSize="Micro" Clicked="EditOa_Clicked"/>
+                <Button Style="{StaticResource DarkButtonStyle}" x:Name="DeleteOa" Text="Delete Objective Assessment" FontSize="Micro" Clicked="DeleteOa_Clicked"/>
+                
+                <!--PERFORMANCE ASSESSMENT-->
+              <Button Style="{StaticResource DarkButtonStyle}" x:Name="AddPa" Text="Add Performance Assessment" FontSize="Micro" Clicked="AddPa_Clicked"/>
+                <Button Style="{StaticResource DarkButtonStyle}" x:Name="EditPa" Text="Edit Performance Assessment" FontSize="Micro" Clicked="EditPa_Clicked"/>
+                <Button Style="{StaticResource DarkButtonStyle}" x:Name="DeletePa" Text="Delete Performance Assessment" FontSize="Micro" Clicked="DeletePa_Clicked"/>
+                <Button Style="{StaticResource DarkButtonStyle}" x:Name="saveCourse" Text="SAVE COURSE" Clicked="SaveCourse_Clicked"/>
+              
+              
+                </StackLayout>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

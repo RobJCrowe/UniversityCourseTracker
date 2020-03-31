@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Crowe_Robert.courseInstructorAddPage"
+    BackgroundColor="{StaticResource PageBackgroundColor}"                          
+    >
+    <NavigationPage.TitleView>
+        <Label Text ="Add Course Instructor"  FontSize="Medium" FontAttributes="Bold" TextColor="White" />
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Style="{StaticResource EntryStyle}" x:Name="ciAddNameEntry" Placeholder="NAME" PlaceholderColor="Black" Margin="10,5,10,1" />
+            <Entry Style="{StaticResource EntryStyle}" x:Name="ciAddPhoneEntry" Placeholder="PHONE" PlaceholderColor="Black" />
+            <Entry Style="{StaticResource EntryStyle}" x:Name="ciAddEmailEntry" Placeholder="EMAIL" PlaceholderColor="Black"/>
+            <Button Style="{StaticResource DarkButtonStyle}" x:Name="ciAddSave" Text="SAVE COURSE INSTRUCTOR" Clicked="CiAddSave_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Xamarin_Crowe_Robert"
+             x:Class="Xamarin_Crowe_Robert.MainPage"
+             Title="TERM MANAGER"
+             BackgroundColor="{StaticResource PageBackgroundColor}">
+    <ContentPage.Content>
+        <StackLayout>
+    <!-- Place new controls here -->
+    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid ColumnSpacing="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"></ColumnDefinition>
+                <ColumnDefinition Width="50*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Style="{StaticResource DarkButtonStyle}" x:Name="settings" Text="SETTINGS" HorizontalOptions="Fill" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" Margin="10,5,2,0"  Padding="5,5,0,5" Clicked="Settings_Clicked" />
+                    <Button Style="{StaticResource DarkButtonStyle}" x:Name="manageCi" Text="MANAGE COURSE INSTRUCTORS" HorizontalOptions="Fill" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="1" Margin="2,5,10,0" Padding="5,5,5,5" Clicked="ManageCi_Clicked"/>
+            <Button Style="{StaticResource DarkButtonStyle}" x:Name="addTerm" Text="ADD TERM" HorizontalOptions="Fill" VerticalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Clicked="AddTerm_Clicked"/>
+        </Grid>
+    </Grid>
+
+            <ListView x:Name="termListView" BackgroundColor="{StaticResource MediumButtonColor}" SeparatorColor="{StaticResource textWhite}" ItemTapped="TermListView_ItemTapped">
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding termName}" TextColor="{StaticResource textWhite}" >
+
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout BackgroundColor="{StaticResource FooterColor}">
+                
+                <Label Style="{StaticResource FooterStyle}" x:Name="termManagerFooter" Text="Tap a term to view details, edit, or delete it." />
+    </StackLayout>
+</StackLayout>
+        </ContentPage.Content>
+</ContentPage>
+    
+
+

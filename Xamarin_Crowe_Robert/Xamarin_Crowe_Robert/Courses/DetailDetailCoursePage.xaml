@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Crowe_Robert.Courses.DetailDetailCoursePage"
+             Title="Course Details"
+             BackgroundColor="{StaticResource PageBackgroundColor}">
+    
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Always">
+            <StackLayout>
+
+            <StackLayout BackgroundColor="{StaticResource MediumButtonColor}">
+            <!--COURSE NAME-->
+            <Label Text="Course Name:" HorizontalOptions="FillAndExpand" FontSize="Micro" TextColor="{StaticResource textWhite}" FontAttributes="Bold"/>
+            <Label Text="{Binding courseName}" HorizontalOptions="FillAndExpand" FontSize="Micro" TextColor="{StaticResource textWhite}"/>
+
+            <!--COURSE START-->
+                    <Label Text="Course Start Date:" HorizontalOptions="FillAndExpand" FontSize="Micro" TextColor="{StaticResource textWhite}" FontAttributes="Bold"/>
+                    <Label Text="{Binding courseStart, StringFormat='{}{0: yyyy-MM-dd}'}" HorizontalOptions="FillAndExpand" FontSize="Micro" TextColor="{StaticResource textWhite}"/>
+
+            <!--COURSE END-->
+                    <Label Text="Course End Date:" HorizontalOptions="FillAndExpand" FontSize="Micro" TextColor="{StaticResource textWhite}" FontAttributes="Bold"/>
+                    <Label Text="{Binding courseEnd, StringFormat='{}{0: yyyy-MM-dd}'}" HorizontalOptions="FillAndExpand" FontSize="Micro" TextColor="{StaticResource textWhite}"/>
+
+            <!--COURSE STATUS-->
+                    <Label Text="Course Status:" HorizontalOptions="FillAndExpand" FontSize="Micro" TextColor="{StaticResource textWhite}" FontAttributes="Bold"/>
+            <Label Text="{Binding courseStatus}" TextColor="{StaticResource textWhite}" HorizontalOptions="FillAndExpand" FontSize="Micro"/>
+
+            <!--TEACHER-->
+                    <Label Text="Teacher:" HorizontalOptions="FillAndExpand" FontSize="Micro" TextColor="{StaticResource textWhite}" FontAttributes="Bold"/>
+                    <Label Text="{Binding CiName}" HorizontalOptions="FillAndExpand" FontSize="Micro" TextColor="{StaticResource textWhite}"/>
+            <!--OPTIONAL NOTES-->
+                    <Label x:Name="oNlabel" Text="Optional Notes:" HorizontalOptions="FillAndExpand" FontSize="Micro" TextColor="{StaticResource textWhite}" FontAttributes="Bold"/>
+                    <Label x:Name="oN" Text="{Binding optionalNotes}" MinimumHeightRequest="200" HorizontalOptions="FillAndExpand" FontSize="Micro" TextColor="{StaticResource textWhite}"/>
+
+            </StackLayout>
+
+            <!--OBJECTIVE ASSESSMENT-->
+            <StackLayout BackgroundColor="{StaticResource FooterColor}" x:Name="oaStackLayout">
+                    <Label x:Name="OAnameLabel" Text="Objective Assessment Name:" FontSize="Micro" FontAttributes="Bold"/>
+                    <Label x:Name="OAname" Text="{Binding oaName}" FontSize="Micro"/>
+                    <Label x:Name="OAstartLabel" Text="OA Start Date:" FontSize="Micro" FontAttributes="Bold"/>
+                    <Label x:Name="OAstart" Text="{Binding oaAnticipatedDueDate, StringFormat='{}{0: yyyy-MM-dd}'}" FontSize="Micro"/>
+                    <Label x:Name="OAendLabel" Text="OA End Date" FontSize="Micro" FontAttributes="Bold"/>
+                    <Label x:Name="OAend" Text="{Binding oaEnd, StringFormat='{}{0: yyyy-MM-dd}'}" FontSize="Micro"/>
+            </StackLayout>
+
+            <!--PERFORMANCE ASSESSMENT-->
+            <StackLayout BackgroundColor="{StaticResource FooterColor}" x:Name="paStackLayout">
+                    <Label x:Name="PAnameLabel" Text="Performance Assessment Name:" FontSize="Micro" FontAttributes="Bold"/>
+                    <Label x:Name="PAname" Text="{Binding paName}" FontSize="Micro"/>
+                    <Label x:Name="PAstartLabel" Text="PA Start Date:" FontSize="Micro" FontAttributes="Bold"/>
+                    <Label x:Name="PAstart" Text="{Binding paAnticipatedDueDate, StringFormat='{}{0: yyyy-MM-dd}'}" FontSize="Micro"/>
+                    <Label x:Name="PAendLabel" Text="PA End Date:" FontSize="Micro" FontAttributes="Bold"/>
+                    <Label x:Name="PAend" Text="{Binding paEnd, StringFormat='{}{0: yyyy-MM-dd}'}" FontSize="Micro"/>
+            </StackLayout>
+
+             <!--BUTTONS-->
+            <StackLayout>
+                <Button Style="{StaticResource DarkButtonStyle}" x:Name="ShareOptionalNotes" Text="SHARE NOTE" Clicked="ShareOptionalNotes_Clicked"/>
+                <Button Style="{StaticResource DarkButtonStyle}" x:Name="editCourse" Text="EDIT COURSE" Clicked="EditCourse_Clicked"/>
+                <Button Style="{StaticResource DarkButtonStyle}" x:Name="deleteCourse" Text="DELETE COURSE" Clicked="DeleteCourse_Clicked"/>
+            </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

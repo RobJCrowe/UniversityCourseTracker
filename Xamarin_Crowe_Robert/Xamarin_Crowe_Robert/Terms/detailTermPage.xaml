@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Crowe_Robert.Terms.detailTermPage" BackgroundColor="{StaticResource PageBackgroundColor}">
+
+    <NavigationPage.TitleView>
+        <Label Text ="Term Details"  FontSize="Medium" FontAttributes="Bold" TextColor="White" />
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        
+            <StackLayout BackgroundColor="{StaticResource PageBackgroundColor}" >
+
+                <StackLayout BackgroundColor="{StaticResource MediumButtonColor}" >
+                    <Label x:Name="termNameLabel" TextColor="{StaticResource textWhite}" Text="  NAME" Margin="10,5,10,5" FontSize="Micro"
+                HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource MediumButtonColor}" />
+
+                    <Label x:Name="termStartLabel"  TextColor="{StaticResource textWhite}" Text="     START:" Margin="10,0,10,0" FontSize="Micro"
+                HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource MediumButtonColor}" />
+
+                    <Label x:Name="termEndLabel" TextColor="{StaticResource textWhite}" Text="     END:" Margin="10,5,10,5" FontSize="Micro"
+                HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource MediumButtonColor}" />
+  
+                </StackLayout>
+            <Button Style="{StaticResource DarkButtonStyle}" Text="MANAGE TERM COURSES" x:Name="ManageTerms" Clicked="ManageTerms_Clicked"/>
+            <Button Style="{StaticResource DarkButtonStyle}" Text="EDIT TERM" x:Name="updateTerm" Clicked="UpdateTerm_Clicked"/>
+            <Button Style="{StaticResource DarkButtonStyle}" Text="DELETE TERM" x:Name="deleteTerm" Clicked="DeleteTerm_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Crowe_Robert.Courses.PaAssessment"
+              BackgroundColor="{StaticResource PageBackgroundColor}">
+
+    <NavigationPage.TitleView>
+        <Label x:Name="paTitleLabel" FontSize="Medium" FontAttributes="Bold" TextColor="White" />
+    </NavigationPage.TitleView>
+
+    <!--PERFORMANCE ASSESSMENT-->
+
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Always" Margin="0,0,0,20" >
+            <StackLayout>
+                <!--PA NAME-->
+                <StackLayout BackgroundColor="{StaticResource MediumButtonColor}">
+                    <Entry x:Name="assessmentName" Text="{Binding PaNameH, Mode=TwoWay}" Placeholder="Performance Assessment Name" TextColor="{StaticResource textWhite}" />
+                </StackLayout>
+
+                <!--PA Start Date-->
+                <StackLayout BackgroundColor="{StaticResource MediumButtonColor}" Margin="0,5,0,5">
+
+                    <Label x:Name="paAnticipatedDueDateLabel" Text="Performance Assessment Start Date:" TextColor="{StaticResource textWhite}"/>
+                    <DatePicker x:Name="paAnticipatedDueDatePicker" TextColor="{StaticResource textWhite}" VerticalOptions="CenterAndExpand" Date="{Binding PaAntH, Mode=TwoWay}" MinimumDate="{Binding TestMinimum}" MaximumDate="{Binding TestMaximum}" >
+                        <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                        <!--{x:Static sys:DateTime.Now}-->
+                    </DatePicker>
+                </StackLayout>
+
+                <!--PA End Date-->
+                <StackLayout BackgroundColor="{StaticResource MediumButtonColor}" Margin="0,5,0,5">
+                    <Label x:Name="paEndLabel" Text="Performance Assessment End Date:" TextColor="{StaticResource textWhite}" />
+                    <DatePicker x:Name="paEndPicker" TextColor="{StaticResource textWhite}" VerticalOptions="CenterAndExpand" Date="{Binding PaEndH, Mode=TwoWay}" MinimumDate="{Binding TestMinimum}" MaximumDate="{Binding TestMaximum}" >
+                        <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                    </DatePicker>
+                </StackLayout>
+
+                <!--SAVE BUTTON-->
+                <Button Style="{StaticResource DarkButtonStyle}" x:Name="saveAssessment" Text="SAVE ASSESSMENT" Clicked="SaveAssessment_Clicked" />
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

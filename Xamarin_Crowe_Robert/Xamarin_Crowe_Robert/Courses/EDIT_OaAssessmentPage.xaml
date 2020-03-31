@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Crowe_Robert.Courses.EDIT_OaAssessmentPage"
+             BackgroundColor="{StaticResource PageBackgroundColor}">
+    
+    <NavigationPage.TitleView>
+        <Label x:Name="oaTitleLabel" FontSize="Medium" FontAttributes="Bold" TextColor="White" />
+    </NavigationPage.TitleView>
+
+    <!--OBJECTIVE ASSESSMENT-->
+    
+    <ContentPage.Content>
+
+        <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Always" Margin="0,0,0,20" >
+            <StackLayout>
+                <!--OA NAME-->
+                <StackLayout BackgroundColor="{StaticResource MediumButtonColor}">
+                <Entry x:Name="assessmentName" Text="{Binding OaNameH, Mode=TwoWay}" Placeholder="Objective Assessment Name" TextColor="{StaticResource textWhite}" />
+                </StackLayout>
+
+                <!--OA START Due Date-->
+                <StackLayout BackgroundColor="{StaticResource MediumButtonColor}" Margin="0,5,0,5">
+
+                    <Label x:Name="oaAnticipatedDueDateLabel" Text="Objective Assessment Start Date:" TextColor="{StaticResource textWhite}"/>
+                <DatePicker x:Name="oaAnticipatedDueDatePicker" TextColor="{StaticResource textWhite}" VerticalOptions="CenterAndExpand" Date="{Binding OaAntH, Mode=TwoWay}" MinimumDate="{Binding TestMinimum}" MaximumDate="{Binding TestMaximum}" >
+                        <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                        <!--{x:Static sys:DateTime.Now}-->
+                    </DatePicker>
+                </StackLayout>
+
+                <!--OA End Date-->
+                <StackLayout BackgroundColor="{StaticResource MediumButtonColor}" Margin="0,5,0,5">
+                    <Label x:Name="oaEndLabel" Text="Objective Assessment End Date:" TextColor="{StaticResource textWhite}" />
+                <DatePicker x:Name="oaEndPicker" TextColor="{StaticResource textWhite}" VerticalOptions="CenterAndExpand" Date="{Binding OaEndH, Mode=TwoWay}" MinimumDate="{Binding TestMinimum}" MaximumDate="{Binding TestMaximum}" >
+                        <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                    </DatePicker>
+                </StackLayout>
+
+                <!--SAVE BUTTON-->
+                <Button Style="{StaticResource DarkButtonStyle}" x:Name="saveAssessment" Text="SAVE ASSESSMENT" Clicked="SaveAssessment_Clicked" />
+
+            <StackLayout>
+                <Label VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+            <StackLayout BackgroundColor="{StaticResource FooterColor}" VerticalOptions="End" Orientation="Horizontal" >
+                <Label HorizontalOptions="CenterAndExpand" TextColor="Black" Text="WARNING: You cannot edit a course's start or end dates with an active assessment. Please delete any active assessments if you need to adjust those values." />
+            </StackLayout>
+            
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Crowe_Robert.Courses.CoursesDetailPage"
+             BackgroundColor="{StaticResource PageBackgroundColor}">
+    
+    <NavigationPage.TitleView>
+        <Label Text ="Manage Term Courses"  FontSize="Medium" FontAttributes="Bold" TextColor="White" />
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Style="{StaticResource DarkButtonStyle}" x:Name="AddCourse" Text ="Add Course"  FontSize="Micro" Clicked="AddCourse_Clicked" />
+
+            <ListView x:Name="courseListView" BackgroundColor="{StaticResource MediumButtonColor}" SeparatorColor="{StaticResource textWhite}" ItemTapped="CourseListView_ItemTapped">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding courseName}" TextColor="{StaticResource textWhite}">
+
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout BackgroundColor="{StaticResource FooterColor}">
+            <Label x:Name="deleteCoursesToAddMore" Text="You have reached the maximum of 6 courses for a term."></Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             x:Class="Xamarin_Crowe_Robert.Terms.addTermPage"
+             Title="Add Term" BackgroundColor="{StaticResource PageBackgroundColor}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="lbAddTermName" Style="{StaticResource EntryStyle}" Placeholder="Term Name" Margin="10,10,10,5" FontSize="Medium" ></Entry>
+
+            <StackLayout BackgroundColor="{StaticResource MediumButtonColor}" Margin="10,5,10,5">
+                <Label x:Name="startDatePicker" Text="Term Start:" TextColor="{StaticResource textWhite}"/>
+                <DatePicker x:Name="startDP" TextColor="{StaticResource textWhite}" VerticalOptions="CenterAndExpand" Date="{x:Static sys:DateTime.Now}">
+                <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                </DatePicker>
+            </StackLayout>
+            <StackLayout BackgroundColor="{StaticResource MediumButtonColor}" Margin="10,5,10,5">
+                <Label x:Name="endDatePicker" Text=" Term End:" TextColor="{StaticResource textWhite}"/>
+                <DatePicker x:Name="endDP" TextColor="{StaticResource textWhite}" VerticalOptions="CenterAndExpand" Date="{x:Static sys:DateTime.Now}">
+                    <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                </DatePicker>
+            </StackLayout>
+            <Button Style="{StaticResource DarkButtonStyle}" Text="ADD TERM" x:Name="addTermSave" Clicked="AddTermSave_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

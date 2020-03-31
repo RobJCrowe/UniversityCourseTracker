@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Crowe_Robert.courseInstructorEditPage"
+             BackgroundColor="{StaticResource PageBackgroundColor}">
+    <NavigationPage.TitleView>
+        <Label Text ="Edit Course Instructor Details"  FontSize="Medium" FontAttributes="Bold" TextColor="White" />
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="{StaticResource MediumButtonColor}">
+                <Entry x:Name="ciName"  Text="Name" FontSize="Micro" TextColor="{StaticResource textWhite}" Placeholder="NAME" PlaceholderColor="Black"/>
+                <Entry x:Name="ciPhone" Text="Phone" FontSize="Micro" TextColor="{StaticResource textWhite}" Placeholder="PHONE" PlaceholderColor="Black"/>
+                <Entry x:Name="ciEmail" Text="Email" FontSize="Micro" TextColor="{StaticResource textWhite}" Placeholder="EMAIL" PlaceholderColor="Black"/>
+            </StackLayout>
+            <Button Style="{StaticResource DarkButtonStyle}" x:Name="saveEditCi" Text="UPDATE" Clicked="SaveEditCi_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

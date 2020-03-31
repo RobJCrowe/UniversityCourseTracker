@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Crowe_Robert.courseInstructorMasterPage"
+             Title="Course Instructors" BackgroundColor="{StaticResource PageBackgroundColor}">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Style="{StaticResource DarkButtonStyle}" x:Name="addCourseInstructor" Text="ADD COURSE INSTRUCTOR" Clicked="AddCourseInstructor_Clicked" Margin="10,5,10,5"></Button>
+            <ListView x:Name="ciListView" BackgroundColor="{StaticResource MediumButtonColor}" SeparatorColor="{StaticResource textWhite}" ItemTapped="CiListView_ItemTapped"> <!--ItemsSource="{Binding cis}"--> 
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding ciName}" TextColor="{StaticResource textWhite}" > <!--Detail="{Binding ciEmail}"--> >
+                            
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <StackLayout BackgroundColor="{StaticResource FooterColor}" VerticalOptions="End" >
+                <Label Style="{StaticResource FooterStyle}" x:Name="courseInstructorMasterFooter" Text="Tap a course instructor to view details, edit or delete." />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage> <!--{Binding courseInstructorId}-->
